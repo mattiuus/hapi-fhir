@@ -18,6 +18,11 @@
 	</properties>
 
 	<name>HAPI FHIR Structures - DSTU3</name>
+	
+	<scm>
+	    <connection>scm:git:https://github.com/mattiuus/hapi-fhir.git</connection>
+	    <developerConnection>scm:git:https://github.com/mattiuus/hapi-fhir.git</developerConnection>
+	</scm>
 
 	<reporting>
 		<plugins>
