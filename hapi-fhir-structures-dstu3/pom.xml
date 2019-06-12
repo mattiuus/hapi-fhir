@@ -9,8 +9,13 @@
 		<relativePath>../hapi-deployable-pom/pom.xml</relativePath>
 	</parent>
 
+	<groupId>fi.kela.kanta.phr</groupId>
 	<artifactId>hapi-fhir-structures-dstu3</artifactId>
+	<version>3.8.0-PHRFIX1</version>
 	<packaging>bundle</packaging>
+	<properties>
+		<trunk_version>3.8.0</trunk_version>
+	</properties>
 
 	<name>HAPI FHIR Structures - DSTU3</name>
 
@@ -89,12 +94,12 @@
 		<dependency>
 			<groupId>ca.uhn.hapi.fhir</groupId>
 			<artifactId>hapi-fhir-base</artifactId>
-			<version>${project.version}</version>
+			<version>${trunk_version}</version>
 		</dependency>
 		<dependency>
 			<groupId>ca.uhn.hapi.fhir</groupId>
 			<artifactId>hapi-fhir-utilities</artifactId>
-			<version>${project.version}</version>
+			<version>${trunk_version}</version>
 		</dependency>
 
 		<!--
@@ -103,7 +108,7 @@
 		<dependency>
 			<groupId>ca.uhn.hapi.fhir</groupId>
 			<artifactId>hapi-fhir-validation-resources-dstu3</artifactId>
-			<version>${project.version}</version>
+			<version>${trunk_version}</version>
 			<scope>test</scope>
 		</dependency>
       <dependency>
@@ -114,13 +119,13 @@
 		<dependency>
 			<groupId>ca.uhn.hapi.fhir</groupId>
 			<artifactId>hapi-fhir-client</artifactId>
-			<version>${project.version}</version>
+			<version>${trunk_version}</version>
 			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>ca.uhn.hapi.fhir</groupId>
 			<artifactId>hapi-fhir-server</artifactId>
-			<version>${project.version}</version>
+			<version>${trunk_version}</version>
 			<optional>true</optional>
 		</dependency>
 

@@ -13,6 +13,7 @@ import org.hl7.fhir.dstu3.context.IWorkerContext;
 import org.hl7.fhir.dstu3.formats.IParser;
 import org.hl7.fhir.dstu3.formats.ParserType;
 import org.hl7.fhir.dstu3.model.*;
+import org.hl7.fhir.dstu3.model.CodeSystem.CodeSystemContentMode;
 import org.hl7.fhir.dstu3.model.CodeSystem.ConceptDefinitionComponent;
 import org.hl7.fhir.dstu3.model.ValueSet.ConceptReferenceComponent;
 import org.hl7.fhir.dstu3.model.ValueSet.ConceptSetComponent;
@@ -298,6 +299,9 @@ public final class HapiWorkerContext implements IWorkerContext, ValueSetExpander
       CodeSystem system = fetchCodeSystem(theSystem);
       if (system == null) {
         return new ValidationResult(IssueSeverity.INFORMATION, "Code " + theSystem + "/" + theCode + " was not validated because the code system is not present");
+      }
+      if (CodeSystemContentMode.NOTPRESENT.equals(system.getContent())) {
+          return new ValidationResult(new ConceptDefinitionComponent(new CodeType(theCode)));
       }
 
       if (system.hasCaseSensitive()) {
