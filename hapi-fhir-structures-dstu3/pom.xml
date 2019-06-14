@@ -11,7 +11,7 @@
 
 	<groupId>fi.kela.kanta.phr</groupId>
 	<artifactId>hapi-fhir-structures-dstu3</artifactId>
-	<version>3.8.0-PHRFIX1</version>
+	<version>3.8.0-PHRFIX1-SNAPSHOT</version>
 	<packaging>bundle</packaging>
 	<properties>
 		<trunk_version>3.8.0</trunk_version>
