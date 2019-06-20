@@ -64,7 +64,7 @@ public class HapiWorkerContextTest {
        
         ValidationResult result = hapiWorkerContext.validateCode(system, "168120", "Amoxicillin (substance)",  valueSet);
         
-        assertTrue(String.format("Expecting ok result, returned non-ok result with message: %s", result.getMessage()),
+        assertFalse(String.format("Expecting ok result, returned non-ok result with message: %s", result.getMessage()),
                 result.isOk());
         
     }
