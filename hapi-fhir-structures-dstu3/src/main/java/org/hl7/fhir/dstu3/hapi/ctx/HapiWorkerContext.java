@@ -301,7 +301,7 @@ public final class HapiWorkerContext implements IWorkerContext, ValueSetExpander
         return new ValidationResult(IssueSeverity.INFORMATION, "Code " + theSystem + "/" + theCode + " was not validated because the code system is not present");
       }
       if (CodeSystemContentMode.NOTPRESENT.equals(system.getContent())) {
-          return new ValidationResult(new ConceptDefinitionComponent(new CodeType(theCode)));
+          return new ValidationResult(IssueSeverity.INFORMATION, "Code " + theSystem + "/" + theCode + " was not validated because the code system is not present", new ConceptDefinitionComponent(new CodeType(theCode)));
       }
 
       if (system.hasCaseSensitive()) {
